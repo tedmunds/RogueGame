@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mapInfo>
+
+  <name>Default Map</name>
+  <genClass>Dungeon</genClass>
+
+  <minEnemies>0</minEnemies>
+  <maxEnemies>3</maxEnemies>
+
+  <maxLootChests>1</maxLootChests>
+
+  <width>80</width>
+  <height>48</height>
+
+  <!-- Terrain types for this map type-->
+  <terrainTypes>
+    <terrain name="Floor">
+      <mobility>Passable</mobility>
+      <character>128</character>
+      <foreground>0x7E9FBF</foreground>
+      <background>0x36495C</background>
+    </terrain>
+
+    <terrain name="Wall">
+      <mobility>BlocksMove</mobility>
+      <character>176</character>
+      <foreground>0x7E9FBF</foreground>
+      <background>0x2C3F52</background>
+    </terrain>
+  </terrainTypes>
+
+  <!-- Enemy spawn tables -->
+  <spawnTable>
+    <entry chance="1.0" name="Scorpion"/>
+    <entry chance="1.0" name="Mollusc"/>
+    <entry chance="1.0" name="Rat"/>
+    <entry chance="1.0" name="Lizard"/>
+  </spawnTable>
+
+  <lootTable>
+    <entry chance="1.0" name="ShortSword"/>
+    <entry chance="1.0" name="WarHammer"/>
+    <entry chance="1.0" name="Polearm"/>
+    <entry chance="1.0" name="Bow"/>
+    <entry chance="0.1" name="Poop"/>
+  </lootTable>
+
+
+  <entry name="Scorpion" levels="1-5" chance="1.0" 
+         health="+10" speed="+100" strength="+1"
+         prefix="Giant" suffix="broodling">    
+  </entry>
+  
+  
+</mapInfo>

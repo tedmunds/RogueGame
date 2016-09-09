@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<blueprintSet>
+  <blueprints>
+    
+    <!-- Base Melee Weapon -->
+    <object name="Item_Weapon">
+      <part type="RenderComponent"    color="0xFFFFFF" ch="132" displayName="Weapon" layer="2"/>
+      <part type="WeaponComponent"    baseDamage="1" damageType="" attribute=""/>
+      <part type="EquipableComponent" slot="weapon"/>
+      <part type="PhysicsComponent"   health="0" weight="10" size="1" blocking="false"/>
+    </object>
+
+    <!-- Base ranged weapon just adds ranged component -->
+    <object name="Item_RangedWeapon" parent="Item_Weapon" >
+      <part type="RangedWeaponComponent" maxRange="10"/>
+    </object>
+    
+    
+    <!-- Weapon Types -->
+    <object name="ShortSword" parent="Item_Weapon">
+      <part type="RenderComponent"  ch="132" displayName="Short Sword"/>
+      <part type="PhysicsComponent" weight="10" size="1"/>
+      <part type="WeaponComponent"  baseDamage="2" damageType="slashing" attribute="blades"/>
+    </object>
+
+    <object name="WarHammer" parent="Item_Weapon">
+      <part type="RenderComponent"  ch="144" displayName="War Hammer"/>
+      <part type="PhysicsComponent" weight="20" size="1"/>
+      <part type="WeaponComponent"  baseDamage="3" damageType="blunt" attribute="hammers"/>
+    </object>
+
+    <object name="Polearm" parent="Item_Weapon">
+      <part type="RenderComponent"  ch="145" displayName="Spear"/>
+      <part type="PhysicsComponent" weight="15" size="1"/>
+      <part type="WeaponComponent"  baseDamage="3" damageType="piercing" attribute="polearms"/>
+    </object>
+
+    <object name="Bow" parent="Item_RangedWeapon">
+      <part type="RenderComponent"  ch="146" displayName="Short Bow"/>
+      <part type="PhysicsComponent" weight="10" size="1"/>
+      <part type="WeaponComponent"  baseDamage="1" damageType="piercing" attribute="bows"/>
+      <part type="RangedWeaponComponent" maxRange="12"/>
+    </object>
+
+    <object name="Poop" parent="Item_Weapon">
+      <part type="RenderComponent"  ch="7" color="0x946C15" displayName="Poop"/>
+      <part type="PhysicsComponent" weight="1" size="0"/>
+      <part type="WeaponComponent"  baseDamage="0" damageType="gross" attribute="bows"/>
+    </object>
+
+  </blueprints>
+</blueprintSet>

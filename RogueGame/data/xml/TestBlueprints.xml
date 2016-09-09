@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<blueprintSet>
+<blueprints>
+
+  <!-- Base class for all moving entites -->
+  <object name="Actor">
+    <part type="RenderComponent"  color="0xFFFFFF" ch="%a" goreColor="0xFF0000" goreCh="%%" layer="2"/>
+    <part type="WalkComponent"/>
+    <part type="TurnComponent"    speed="1000"/>
+    <part type="SenseComponent"   sightRange="15"/>
+    <part type="AttackComponent"  strength="1"/>
+    <part type="PhysicsComponent" health="5" weight="100" size="2"/>
+    <part type="InvComponent"     size="10"/>
+  </object>
+  
+  <object name="Player" parent="Actor">
+    <part type="RenderComponent"    color="0xF0F075" ch="130" layer="4" displayName="Player"/>
+    <part type="PhysicsComponent"   health="25"/>
+    <part type="TeamComponent"      teamNum="0"/>
+    <part type="SkillUserComponent" maxEnergy="10" regen="0.05"/>
+    <part type="EquipmentComponent"/>
+    <part type="AttributesComponent"/>
+  </object>
+  
+  <object name="Mob" parent="Actor">
+    <part type="RenderComponent" color="0xD47531" ch="131" layer="3" displayName="Enemy"/>
+    <part type="ThinkComponent" />
+    <part type="TeamComponent" teamNum="1"/>
+    <part type="ResistanceComponent" resistType=""/>
+  </object>
+  
+  <!-- Doors -->
+  <object name="Door">
+    <part type="RenderComponent"   layer="1" color="0xFFFFFF" ch="138" 
+                                   goreColor="0xFFFFFF" goreCh="129" 
+                                   displayName="Wooden Door"/>
+    <part type="PhysicsComponent"  health="25" weight="200" size="5"/>
+    <part type="OpenableComponent" openedCh="139"/>
+    <part type="DoorComponent"/>
+    <part type="ObscuringComponent"/>
+    <part type="StaticComponent"/>
+  </object>
+
+  <object name="LockedDoor" parent="Door">
+    <part type="RenderComponent"/>
+    <part type="LockComponent"/>
+  </object>
+
+  <object name="Entrance">
+    <part type="RenderComponent" color="0xFFFFFF" ch="136" layer="1" displayName="Stairs Up"/>
+    <part type="PortalComponent" mapCode="PREVIOUS"/>
+    <part type="StaticComponent"/>
+  </object>
+
+  <object name="Exit">
+    <part type="RenderComponent" color="0xFFFFFF" ch="137" layer="1" displayName="Stairs Down"/>
+    <part type="PortalComponent" mapCode="DUNGEON_NEXT"/>
+    <part type="StaticComponent"/>
+  </object>
+
+  <!-- Chests -->
+  <object name="Chest">
+    <part type="RenderComponent"   layer="1" color="0xFFFFFF" ch="134" 
+                                   goreColor="0xFFFFFF" goreCh="129" 
+                                   displayName="Chest"/>
+    <part type="PhysicsComponent"  health="25" weight="200" size="5"/>
+    <part type="LockComponent"     keyType="Item_Key"/>
+    <part type="OpenableComponent" openedCh="135"/>
+    <part type="InvComponent"      size =" 5"/>
+    <part type="ChestComponent"/>
+    <part type="StaticComponent"/>
+    <part type="InvulnerableComponent"/>
+  </object>
+
+  <!-- Base Items -->
+  <object name="Item">
+    <part type="RenderComponent"  color="0xFFFFFF" ch="%i" layer="2"/>
+    <part type="PhysicsComponent" health="0" weight="10" size="1" blocking="false"/>
+  </object>
+
+  <object name="Item_Key" parent="Item">
+    <part type="RenderComponent" ch="140" displayName="Key"/>
+    <part type="KeyComponent"/>
+  </object>
+
+  <!-- Mob types -->
+
+  <object name="Scorpion" parent="Mob">
+    <part type="RenderComponent"  color="0xD47531" ch="131" goreColor="0xD47531" goreCh="129" displayName="Scorpion"/>
+    <part type="TurnComponent"    speed="1000"/>
+    <part type="PhysicsComponent" health="5" weight="100" size="2"/>
+    <part type="ResistanceComponent" resistType="armoured"/>
+    <part type="AttackComponent"  strength="1"/>
+  </object>
+
+  <object name="Rat" parent="Mob">
+    <part type="RenderComponent" color="0xD4A190" ch="142" displayName="Rat"/>
+    <part type="TurnComponent"    speed="1200"/>
+    <part type="PhysicsComponent" health="2" weight="50" size="1"/>
+    <part type="ResistanceComponent" resistType="diseased"/>
+    <part type="AttackComponent"  strength="1"/>
+  </object>
+
+  <object name="Mollusc" parent="Mob">
+    <part type="RenderComponent"  color="0xC390D4" ch="141" goreColor="0xC390D4" goreCh="129" displayName="Mollusc"/>
+    <part type="TurnComponent"    speed="300"/>
+    <part type="PhysicsComponent" health="10" weight="50" size="1"/>
+    <part type="ResistanceComponent" resistType="shell"/>
+    <part type="AttackComponent"  strength="1"/>
+  </object>
+
+  <object name="Lizard" parent="Mob">
+    <part type="RenderComponent"  color="0xA1D490" ch="143" displayName="Lizard"/>
+    <part type="TurnComponent"    speed="1500"/>
+    <part type="PhysicsComponent" health="5" weight="50" size="2"/>
+    <part type="ResistanceComponent" resistType="reptile"/>
+    <part type="AttackComponent"  strength="1"/>
+  </object>
+  
+</blueprints>
+</blueprintSet>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<blueprintSet>
+<blueprints>
+  <!-- 
+  Skills are special case entities that are not spawned in the map or rendered in the default way.
+  As such, they do not use the normal set of components. Instead, they use only [...]Skill named components
+  apart from the base Skillcomponent that every skill must have.
+  -->
+  
+  <!-- Base definition of a skill, should never actually be instantitated in game -->
+  <object name="Skill">
+    <part type="SkillComponent" name="Default_Skill" attribute=""/>
+  </object>
+
+  <object name="AttackSkill"    parent="Skill">
+    <part type="SkillComponent" name="Attack_Skill"/>
+    <!-- Attack skill effects the users next attack, and applies damage to all effected -->
+    <part type="AttackSkill"/> 
+  </object>
+  
+  <object name="Skill_PowerAttack"    parent="AttackSkill">
+    <part type="SkillComponent"       name="Power Attack" energy="3" attribute="strength"/>
+    <part type="IncreaseDamageSkill"  baseDamage="5"/>
+  </object>
+
+  <object name="Skill_AOEAttack"      parent="AttackSkill">
+    <part type="SkillComponent"       name="Earth Smash" energy="2" attribute="strength"/>
+    <part type="IncreaseDamageSkill"  baseDamage="2"/>
+    <part type="AreaOfEffectSkill"    radius="2.0"/>
+  </object>
+
+  <object name="Skill_AOEForceAttack" parent="AttackSkill">
+    <part type="SkillComponent"       name="Summon Shockwave" energy="5" attribute="wisdom"/>
+    <part type="AreaOfEffectSkill"    radius="2.0"/>
+    <part type="ApplyForceSkill"      force="200.0"/>
+  </object>
+
+  <object name="Skill_Shove"          parent="AttackSkill">
+    <part type="SkillComponent"       name="Shove" energy="1" attribute="strength"/>
+    <part type="ApplyForceSkill"      force="200.0"/>
+  </object>
+
+  <object name="Skill_HealSelf"       parent="Skill">
+    <part type="SkillComponent"       name="Holy Light" energy="5" attribute="wisdom"/>
+    <part type="TargetSelfSkill"/>
+    <part type="HealingSkill"         healing="5"/>
+  </object>
+  
+</blueprints>
+</blueprintSet>

@@ -1,0 +1,10 @@
+﻿
+# Table name
+CharacterCreation
+
+# name of the set		The set of things identified by name
+name					set
+startSkills				Skill_PowerAttack,Skill_AOEAttack,Skill_AOEForceAttack,Skill_Shove,Skill_HealSelf
+
+startItems				ShortSword,WarHammer,Polearm,Bow,Poop
+

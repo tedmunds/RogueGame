@@ -1,0 +1,14 @@
+﻿
+# Contains a matrix of resistance types level of resistance to each damage type
+# every entry indicates what the level of resistance is: 0 means no resist, +1 is resistant, -1 is weakness
+
+# Table name
+Resistances
+
+
+# resistance type : -> damage types
+name				slashing	blunt	piercing	gross
+armoured			1			-1		-1			-1
+diseased			-1			0		0			1
+shell				1			-1		1			1
+reptile				0			0		-1			0

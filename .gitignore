@@ -1,0 +1,57 @@
+ User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+
+
+# OS generated files #
+.DS_Store*
+Icon?
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+
+
+# Remainings from resolvings conflicts in Source Control
+*.orig
+
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac desktop service store files
+.DS_Store
+
+# Visual Studio temp something
+.vs/
+
+# This is simply the file containing the raw cource for the libraries 
+# that are depended on and set up in the project. It is not needed.
+Dependencies/
